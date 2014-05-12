@@ -211,9 +211,10 @@ data[, `:=`(date, as.Date(date))]
 <li>Make a histogram of the total number of steps taken each day</li>
 </ol>
 
-<pre><code class="r">
+<pre><code class="r"># Aggregate steps data by date and total them
 tot.sum.per.day &lt;- aggregate(steps ~ date, data = data, FUN = sum)
 
+# Plot barplot, since it gives better view per date compare to histogram
 barplot(tot.sum.per.day$steps, names.arg = tot.sum.per.day$date, xlab = &quot;Date&quot;, 
     ylab = &quot;Steps&quot;, main = &quot;Total number of steps taken each day&quot;)
 </code></pre>

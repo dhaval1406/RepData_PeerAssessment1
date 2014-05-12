@@ -35,9 +35,10 @@ data[, `:=`(date, as.Date(date))]
 
 
 ```r
-
+# Aggregate steps data by date and total them
 tot.sum.per.day <- aggregate(steps ~ date, data = data, FUN = sum)
 
+# Plot barplot, since it gives better view per date compare to histogram
 barplot(tot.sum.per.day$steps, names.arg = tot.sum.per.day$date, xlab = "Date", 
     ylab = "Steps", main = "Total number of steps taken each day")
 ```
